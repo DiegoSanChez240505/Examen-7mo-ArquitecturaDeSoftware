@@ -1,0 +1,267 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\factories\\estudiantefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:factories\\estudiantefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\docs\\diagramas\\secuencia-crear-estudiante.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:docs\\diagramas\\secuencia-crear-estudiante.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\docs\\estudiantes-api.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:docs\\estudiantes-api.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\docs\\diagramas\\secuencia-tipo-info.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:docs\\diagramas\\secuencia-tipo-info.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\controllers\\estudiantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:controllers\\estudiantescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\docs\\diagramas\\diagrama-clases.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:docs\\diagramas\\diagrama-clases.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\controllers\\tiposestudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:controllers\\tiposestudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\data\\models\\estudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:data\\models\\estudiantes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\data\\models\\carreras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:data\\models\\carreras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|c:\\utm\\arquitectura de software\\examen\\examen-7mo-arquitecturadesoftware\\examendiegounidad2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{946544EA-E08F-4BAA-9BD9-03BD3F446811}|ExamenDiegoUnidad2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 204,
+          "SelectedChildIndex": 22,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Secuencia-Crear-Estudiante.md",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Secuencia-Crear-Estudiante.md",
+              "RelativeDocumentMoniker": "Docs\\Diagramas\\Secuencia-Crear-Estudiante.md",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Secuencia-Crear-Estudiante.md",
+              "RelativeToolTip": "Docs\\Diagramas\\Secuencia-Crear-Estudiante.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-07T00:08:53.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Estudiantes-API.md",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Estudiantes-API.md",
+              "RelativeDocumentMoniker": "Docs\\Estudiantes-API.md",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Estudiantes-API.md",
+              "RelativeToolTip": "Docs\\Estudiantes-API.md",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAAAOUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-06T23:14:55.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Secuencia-Tipo-Info.md",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Secuencia-Tipo-Info.md",
+              "RelativeDocumentMoniker": "Docs\\Diagramas\\Secuencia-Tipo-Info.md",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Secuencia-Tipo-Info.md",
+              "RelativeToolTip": "Docs\\Diagramas\\Secuencia-Tipo-Info.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-07T00:08:54.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EstudiantesController.cs",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Controllers\\EstudiantesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EstudiantesController.cs",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Controllers\\EstudiantesController.cs",
+              "RelativeToolTip": "Controllers\\EstudiantesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T23:03:09.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EstudianteFactory.cs",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Factories\\EstudianteFactory.cs",
+              "RelativeDocumentMoniker": "Factories\\EstudianteFactory.cs",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Factories\\EstudianteFactory.cs",
+              "RelativeToolTip": "Factories\\EstudianteFactory.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA4wC8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T01:37:40.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Diagrama-Clases.md",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Diagrama-Clases.md",
+              "RelativeDocumentMoniker": "Docs\\Diagramas\\Diagrama-Clases.md",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Docs\\Diagramas\\Diagrama-Clases.md",
+              "RelativeToolTip": "Docs\\Diagramas\\Diagrama-Clases.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-11-07T00:08:53.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TiposEstudianteController.cs",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Controllers\\TiposEstudianteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TiposEstudianteController.cs",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Controllers\\TiposEstudianteController.cs",
+              "RelativeToolTip": "Controllers\\TiposEstudianteController.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T23:19:33.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Estudiantes.cs",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Data\\Models\\Estudiantes.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Estudiantes.cs",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Data\\Models\\Estudiantes.cs",
+              "RelativeToolTip": "Data\\Models\\Estudiantes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T01:25:09.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Carreras.cs",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Data\\Models\\Carreras.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Carreras.cs",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\Data\\Models\\Carreras.cs",
+              "RelativeToolTip": "Data\\Models\\Carreras.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-06T01:25:05.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\UTM\\Arquitectura de software\\Examen\\Examen-7mo-ArquitecturaDeSoftware\\ExamenDiegoUnidad2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-06T01:18:23.086Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 69,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

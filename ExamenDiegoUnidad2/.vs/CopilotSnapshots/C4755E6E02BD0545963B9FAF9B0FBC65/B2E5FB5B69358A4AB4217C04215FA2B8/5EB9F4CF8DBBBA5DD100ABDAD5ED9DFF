@@ -1,0 +1,120 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ExamenDiegoUnidad2.Models.DTOs;
+using ExamenDiegoUnidad2.Services.Interfaces;
+
+namespace ExamenDiegoUnidad2.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CarrerasController : ControllerBase
+    {
+        private readonly ICarreraService _carreraService;
+
+        public CarrerasController(ICarreraService carreraService)
+        {
+            _carreraService = carreraService;
+        }
+
+        /// <summary>
+        /// Obtiene todas las carreras
+        /// </summary>
+        [HttpGet]
+        [Route("todas")]
+        public async Task<ActionResult<ApiResponse<List<CarreraDto>>>> ObtenerCarreras()
+        {
+            var resultado = await _carreraService.ObtenerCarrerasAsync();
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene una carrera por su ID
+        /// </summary>
+        [HttpGet("byId/{id}")]
+        public async Task<ActionResult<ApiResponse<CarreraDto>>> ObtenerCarreraPorId(int id)
+        {
+            var resultado = await _carreraService.ObtenerCarreraPorIdAsync(id);
+            
+            if (!resultado.Success)
+                return NotFound(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Crea una nueva carrera
+        /// </summary>
+        [HttpPost]
+        [Route("crear")]
+        public async Task<ActionResult<ApiResponse<CarreraDto>>> CrearCarrera([FromBody] CarreraCreateDto carreraDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<CarreraDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _carreraService.CrearCarreraAsync(carreraDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return CreatedAtAction(nameof(ObtenerCarreraPorId), new { id = resultado.Data!.IdCarrera }, resultado);
+        }
+
+        /// <summary>
+        /// Actualiza una carrera existente
+        /// </summary>
+        [HttpPut("Actualizar/{id}")]
+        public async Task<ActionResult<ApiResponse<CarreraDto>>> ActualizarCarrera(int id, [FromBody] CarreraCreateDto carreraDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<CarreraDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _carreraService.ActualizarCarreraAsync(id, carreraDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Elimina una carrera
+        /// </summary>
+        [HttpDelete("Eliminar/{id}")]
+        public async Task<ActionResult<ApiResponse<bool>>> EliminarCarrera(int id)
+        {
+            var resultado = await _carreraService.EliminarCarreraAsync(id);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Valida si el nombre de una carrera es único
+        /// </summary>
+        [HttpGet("validar-nombre/{nombreCarrera}")]
+        public async Task<ActionResult<ApiResponse<bool>>> ValidarNombreCarreraUnico(string nombreCarrera, [FromQuery] int? idCarreraExcluir = null)
+        {
+            var resultado = await _carreraService.ValidarNombreCarreraUnicoAsync(nombreCarrera, idCarreraExcluir);
+            return Ok(resultado);
+        }
+    }
+}

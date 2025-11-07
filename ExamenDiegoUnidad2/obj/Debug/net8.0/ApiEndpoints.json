@@ -1,0 +1,556 @@
+[
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "CrearCarrera",
+    "RelativePath": "api/carreras",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carreraDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.CarreraCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.CarreraDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "ObtenerCarreraPorId",
+    "RelativePath": "api/carreras/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.CarreraDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "ActualizarCarrera",
+    "RelativePath": "api/carreras/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "carreraDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.CarreraCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.CarreraDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "EliminarCarrera",
+    "RelativePath": "api/carreras/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "ObtenerCarreras",
+    "RelativePath": "api/carreras/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[ExamenDiegoUnidad2.Models.DTOs.CarreraDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.CarrerasController",
+    "Method": "ValidarNombreCarreraUnico",
+    "RelativePath": "api/carreras/validar-nombre/{nombreCarrera}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombreCarrera",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idCarreraExcluir",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "CrearEstudiante",
+    "RelativePath": "api/estudiantes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "estudianteDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.EstudianteCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ObtenerEstudiantePorId",
+    "RelativePath": "api/estudiantes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ActualizarEstudiante",
+    "RelativePath": "api/estudiantes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "estudianteDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.EstudianteUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "EliminarEstudiante",
+    "RelativePath": "api/estudiantes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ObtenerEstudiantesPorCarrera",
+    "RelativePath": "api/estudiantes/carrera/{idCarrera}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCarrera",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ObtenerEstudiantes",
+    "RelativePath": "api/estudiantes/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdCarrera",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Semestre",
+        "Type": "System.Nullable\u00601[[System.SByte, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdTipoEstudiante",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "NombreCompleto",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Matricula",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PromedioMinimo",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PromedioMaximo",
+        "Type": "System.Nullable\u00601[[System.Decimal, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.PaginatedResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ObtenerEstudiantesPorSemestre",
+    "RelativePath": "api/estudiantes/semestre/{semestre}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "semestre",
+        "Type": "System.SByte",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[ExamenDiegoUnidad2.Models.DTOs.EstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ObtenerInformacionTipoEstudiante",
+    "RelativePath": "api/estudiantes/tipo-info/{idTipoEstudiante}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTipoEstudiante",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.EstudiantesController",
+    "Method": "ValidarMatriculaUnica",
+    "RelativePath": "api/estudiantes/validar-matricula/{matricula}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "matricula",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idEstudianteExcluir",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "CrearTipoEstudiante",
+    "RelativePath": "api/tipos-estudiante",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "ObtenerTipoEstudiantePorId",
+    "RelativePath": "api/tipos-estudiante/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "ActualizarTipoEstudiante",
+    "RelativePath": "api/tipos-estudiante/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tipoDto",
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "EliminarTipoEstudiante",
+    "RelativePath": "api/tipos-estudiante/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "ObtenerTiposEstudiante",
+    "RelativePath": "api/tipos-estudiante/get-all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Collections.Generic.List\u00601[[ExamenDiegoUnidad2.Models.DTOs.TipoEstudianteDto, ExamenDiegoUnidad2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ExamenDiegoUnidad2.Controllers.TiposEstudianteController",
+    "Method": "ValidarNombreTipoUnico",
+    "RelativePath": "api/tipos-estudiante/validar-nombre/{nombreTipo}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nombreTipo",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "idTipoExcluir",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ExamenDiegoUnidad2.Models.DTOs.ApiResponse\u00601[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

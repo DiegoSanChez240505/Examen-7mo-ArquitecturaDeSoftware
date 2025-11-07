@@ -1,0 +1,180 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ExamenDiegoUnidad2.Models.DTOs;
+using ExamenDiegoUnidad2.Services.Interfaces;
+using ExamenDiegoUnidad2.Factories;
+
+namespace ExamenDiegoUnidad2.Controllers
+{
+    [ApiController]
+    [Produces("application/json")]
+    [Route("api/estudiantes")]
+    public class EstudiantesController : ControllerBase
+    {
+        private readonly IEstudianteService _estudianteService;
+
+        public EstudiantesController(IEstudianteService estudianteService)
+        {
+            _estudianteService = estudianteService;
+        }
+
+        /// <summary>
+        /// Obtiene una lista paginada de estudiantes con filtros opcionales
+        /// </summary>
+        [HttpGet("get-all")]
+        public async Task<ActionResult<ApiResponse<PaginatedResponse<EstudianteDto>>>> ObtenerEstudiantes([FromQuery] EstudianteFiltroDto filtro)
+        {
+            var resultado = await _estudianteService.ObtenerEstudiantesAsync(filtro);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene un estudiante por su ID
+        /// </summary>
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<ApiResponse<EstudianteDto>>> ObtenerEstudiantePorId(int id)
+        {
+            var resultado = await _estudianteService.ObtenerEstudiantePorIdAsync(id);
+            
+            if (!resultado.Success)
+                return NotFound(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Crea un nuevo estudiante
+        /// </summary>
+        [HttpPost]
+        public async Task<ActionResult<ApiResponse<EstudianteDto>>> CrearEstudiante([FromBody] EstudianteCreateDto estudianteDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<EstudianteDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _estudianteService.CrearEstudianteAsync(estudianteDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return CreatedAtAction(nameof(ObtenerEstudiantePorId), new { id = resultado.Data!.IdEstudiante }, resultado);
+        }
+
+        /// <summary>
+        /// Actualiza un estudiante existente
+        /// </summary>
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<ApiResponse<EstudianteDto>>> ActualizarEstudiante(int id, [FromBody] EstudianteUpdateDto estudianteDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<EstudianteDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _estudianteService.ActualizarEstudianteAsync(id, estudianteDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Elimina un estudiante
+        /// </summary>
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult<ApiResponse<bool>>> EliminarEstudiante(int id)
+        {
+            var resultado = await _estudianteService.EliminarEstudianteAsync(id);
+            
+            if (!resultado.Success)
+                return NotFound(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene estudiantes filtrados por carrera
+        /// </summary>
+        [HttpGet("carrera/{idCarrera:int}")]
+        public async Task<ActionResult<ApiResponse<List<EstudianteDto>>>> ObtenerEstudiantesPorCarrera(int idCarrera)
+        {
+            var resultado = await _estudianteService.ObtenerEstudiantesPorCarreraAsync(idCarrera);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene estudiantes filtrados por semestre
+        /// </summary>
+        [HttpGet("semestre/{semestre}")]
+        public async Task<ActionResult<ApiResponse<List<EstudianteDto>>>> ObtenerEstudiantesPorSemestre(sbyte semestre)
+        {
+            var resultado = await _estudianteService.ObtenerEstudiantesPorSemestreAsync(semestre);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Valida si una matrícula es única
+        /// </summary>
+        [HttpGet("validar-matricula/{matricula}")]
+        public async Task<ActionResult<ApiResponse<bool>>> ValidarMatriculaUnica(string matricula, [FromQuery] int? idEstudianteExcluir = null)
+        {
+            var resultado = await _estudianteService.ValidarMatriculaUnicaAsync(matricula, idEstudianteExcluir);
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene información del tipo de estudiante usando Factory Pattern
+        /// </summary>
+        [HttpGet("tipo-info/{idTipoEstudiante:int}")]
+        public ActionResult<object> ObtenerInformacionTipoEstudiante(int idTipoEstudiante)
+        {
+            try
+            {
+                var tipoEstudiante = EstudianteFactoryProvider.CrearEstudiantePorTipo(idTipoEstudiante);
+                
+                var info = new
+                {
+                    IdTipo = idTipoEstudiante,
+                    Descripcion = tipoEstudiante.ObtenerDescripcion(),
+                    PuedeRecibirBecas = tipoEstudiante.PuedeRecibirBecas(),
+                    PrioridadInscripcion = tipoEstudiante.ObtenerPrioridadInscripcion(),
+                    DescuentoMatricula = new
+                    {
+                        MontoBase = 1000m,
+                        MontoConDescuento = tipoEstudiante.CalcularDescuentoMatricula(1000m),
+                        PorcentajeDescuento = Math.Round((1 - (tipoEstudiante.CalcularDescuentoMatricula(1000m) / 1000m)) * 100, 2)
+                    }
+                };
+                
+                return Ok(ApiResponse<object>.SuccessResponse(info));
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ApiResponse<object>.ErrorResponse(ex.Message));
+            }
+        }
+    }
+}

@@ -1,0 +1,365 @@
+/* Variables para colores */
+:root {
+    --color-turquesa: #20b2aa; /* Similar al de la imagen */
+    --color-turquesa-oscuro: #1b9e97;
+    --color-fondo: #f5f5f5;
+    --color-texto: #333;
+    --color-blanco: #fff;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineamos arriba para ver todo el contenido */
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    color: var(--color-texto);
+}
+
+/* --- ESTILO DE REGISTRO (SIMILAR A LA IMAGEN) --- */
+.main-wrapper {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.container-registro {
+    display: flex;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px auto;
+    max-width: 900px; /* Tamaño del contenedor de registro */
+    background: var(--color-blanco);
+}
+
+/* Panel Izquierdo - El fondo de color con la forma */
+.panel-izquierdo {
+    flex: 1;
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Para que esté sobre el fondo */
+}
+
+/* Forma curva del panel izquierdo */
+.panel-izquierdo::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 400px; /* Ajusta el tamaño de la curva */
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1); /* Círculo de transparencia */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
+.panel-izquierdo::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 500px; 
+    height: 500px;
+    background: rgba(0, 0, 0, 0.05); 
+    border-radius: 50%;
+    transform: translate(50%, 50%);
+    opacity: 0.5;
+}
+
+
+.saludo-titulo {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.saludo-texto {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.btn-secundario {
+    background: var(--color-blanco);
+    color: var(--color-turquesa);
+    border: 2px solid var(--color-blanco);
+    padding: 10px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-secundario:hover {
+    background: transparent;
+    color: var(--color-blanco);
+}
+
+/* Panel Derecho - El Formulario */
+.panel-derecho {
+    flex: 1.2; /* Un poco más de espacio para el formulario */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-blanco);
+}
+
+.form-titulo {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    margin: 15px 0 25px 0;
+}
+
+.social-icons i {
+    font-size: 1.5em;
+    margin: 0 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.social-icons i:hover {
+    color: var(--color-turquesa);
+    border-color: var(--color-turquesa);
+}
+
+.form-subtexto {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#student-form {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Estilo para los campos de entrada */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd; /* Línea separadora sutil */
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.input-group i {
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.input-group input, .input-group select {
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+    padding: 10px 0;
+    font-size: 1em;
+    outline: none; /* Quitar el borde de enfoque del navegador */
+}
+
+.input-group select {
+    color: var(--color-texto);
+    cursor: pointer;
+}
+
+/* Botón principal de REGISTRAR */
+.btn-principal {
+    width: 100%;
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: var(--color-turquesa-oscuro);
+}
+
+/* Mensaje del servidor */
+.mensaje {
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 15px;
+    border: 1px solid;
+    display: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* --- ESTILOS DE LA SECCIÓN INFERIOR DE CONSULTA --- */
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#consulta h2 {
+    color: var(--color-turquesa);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#filtros {
+    margin-bottom: 20px;
+}
+
+.filtros-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filtros-row label {
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-right: 5px;
+}
+
+#filtros input, #filtros select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+#filtros button, #consulta > button {
+    background-color: #5cb85c; /* Un color de acción diferente */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#filtros button:hover, #consulta > button:hover {
+    background-color: #4cae4c;
+}
+
+/* Estilo de la tabla */
+#estudiantes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#estudiantes-table thead tr {
+    background-color: var(--color-turquesa);
+    color: var(--color-blanco);
+    text-align: left;
+}
+
+#estudiantes-table th, #estudiantes-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+#estudiantes-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#estudiantes-table td button {
+    background: #f0ad4e;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: opacity 0.3s;
+    font-size: 12px;
+}
+
+#estudiantes-table td button.btn-eliminar {
+    background: #d9534f;
+}
+
+#estudiantes-table td button.btn-editar:hover {
+    background: #ec971f;
+}
+
+#estudiantes-table td button.btn-eliminar:hover {
+    background: #c9302c;
+}
+
+
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .container-registro {
+        flex-direction: column;
+    }
+
+    .panel-izquierdo {
+        border-radius: 10px 10px 0 0;
+        padding: 40px 20px;
+    }
+
+    .panel-derecho {
+        padding: 30px 20px;
+    }
+
+    .filtros-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .filtros-row label {
+        margin-bottom: 5px;
+    }
+
+    #filtros input, #filtros select {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #estudiantes-table {
+        font-size: 12px;
+    }
+
+    #estudiantes-table th, #estudiantes-table td {
+        padding: 8px 6px;
+    }
+}

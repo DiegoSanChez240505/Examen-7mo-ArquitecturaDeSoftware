@@ -1,0 +1,118 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ExamenDiegoUnidad2.Models.DTOs;
+using ExamenDiegoUnidad2.Services.Interfaces;
+
+namespace ExamenDiegoUnidad2.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class TiposEstudianteController : ControllerBase
+    {
+        private readonly ITipoEstudianteService _tipoEstudianteService;
+
+        public TiposEstudianteController(ITipoEstudianteService tipoEstudianteService)
+        {
+            _tipoEstudianteService = tipoEstudianteService;
+        }
+
+        /// <summary>
+        /// Obtiene todos los tipos de estudiante
+        /// </summary>
+        [HttpGet]
+        public async Task<ActionResult<ApiResponse<List<TipoEstudianteDto>>>> ObtenerTiposEstudiante()
+        {
+            var resultado = await _tipoEstudianteService.ObtenerTiposEstudianteAsync();
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Obtiene un tipo de estudiante por su ID
+        /// </summary>
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ApiResponse<TipoEstudianteDto>>> ObtenerTipoEstudiantePorId(int id)
+        {
+            var resultado = await _tipoEstudianteService.ObtenerTipoEstudiantePorIdAsync(id);
+            
+            if (!resultado.Success)
+                return NotFound(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Crea un nuevo tipo de estudiante
+        /// </summary>
+        [HttpPost]
+        public async Task<ActionResult<ApiResponse<TipoEstudianteDto>>> CrearTipoEstudiante([FromBody] TipoEstudianteCreateDto tipoDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<TipoEstudianteDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _tipoEstudianteService.CrearTipoEstudianteAsync(tipoDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return CreatedAtAction(nameof(ObtenerTipoEstudiantePorId), new { id = resultado.Data!.IdTipoEstudiante }, resultado);
+        }
+
+        /// <summary>
+        /// Actualiza un tipo de estudiante existente
+        /// </summary>
+        [HttpPut("{id}")]
+        public async Task<ActionResult<ApiResponse<TipoEstudianteDto>>> ActualizarTipoEstudiante(int id, [FromBody] TipoEstudianteCreateDto tipoDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                var errores = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+                    
+                return BadRequest(ApiResponse<TipoEstudianteDto>.ErrorResponse("Datos inválidos", errores));
+            }
+
+            var resultado = await _tipoEstudianteService.ActualizarTipoEstudianteAsync(id, tipoDto);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Elimina un tipo de estudiante
+        /// </summary>
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ApiResponse<bool>>> EliminarTipoEstudiante(int id)
+        {
+            var resultado = await _tipoEstudianteService.EliminarTipoEstudianteAsync(id);
+            
+            if (!resultado.Success)
+                return BadRequest(resultado);
+                
+            return Ok(resultado);
+        }
+
+        /// <summary>
+        /// Valida si el nombre de un tipo de estudiante es único
+        /// </summary>
+        [HttpGet("validar-nombre/{nombreTipo}")]
+        public async Task<ActionResult<ApiResponse<bool>>> ValidarNombreTipoUnico(string nombreTipo, [FromQuery] int? idTipoExcluir = null)
+        {
+            var resultado = await _tipoEstudianteService.ValidarNombreTipoUnicoAsync(nombreTipo, idTipoExcluir);
+            return Ok(resultado);
+        }
+    }
+}

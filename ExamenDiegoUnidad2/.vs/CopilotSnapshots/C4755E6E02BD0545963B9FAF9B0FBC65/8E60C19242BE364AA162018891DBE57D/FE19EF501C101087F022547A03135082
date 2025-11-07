@@ -1,0 +1,229 @@
+﻿# API de Estudiantes, Carreras y Tipos de Estudiante
+
+Este documento consolida todas las rutas (endpoints) y los modelos utilizados por la API para consumo del frontend.
+
+---
+
+## Estudiantes API
+
+Base URL: `/api/estudiantes`
+
+### Endpoints
+
+- GET `/api/estudiantes/get-all`
+  - Query params (opcionales):
+    - `idCarrera: int?`
+    - `semestre: sbyte?`
+    - `idTipoEstudiante: int?`
+    - `nombreCompleto: string?`
+    - `matricula: string?`
+    - `promedioMinimo: decimal?`
+    - `promedioMaximo: decimal?`
+    - `page: int`
+    - `pageSize: int`
+  - Respuesta: `ApiResponse<PaginatedResponse<EstudianteDto)>`
+
+- GET `/api/estudiantes/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<EstudianteDto>`
+
+- POST `/api/estudiantes`
+  - Body: `EstudianteCreateDto`
+  - Respuesta: `ApiResponse<EstudianteDto>` (201 Created)
+
+- PUT `/api/estudiantes/{id}`
+  - Route params: `id: int`
+  - Body: `EstudianteUpdateDto`
+  - Respuesta: `ApiResponse<EstudianteDto>`
+
+- DELETE `/api/estudiantes/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<bool>`
+
+- GET `/api/estudiantes/carrera/{idCarrera}`
+  - Route params: `idCarrera: int`
+  - Respuesta: `ApiResponse<List<EstudianteDto>>`
+
+- GET `/api/estudiantes/semestre/{semestre}`
+  - Route params: `semestre: sbyte`
+  - Respuesta: `ApiResponse<List<EstudianteDto>>`
+
+- GET `/api/estudiantes/validar-matricula/{matricula}?idEstudianteExcluir={id?}`
+  - Route params: `matricula: string`
+  - Query params: `idEstudianteExcluir: int?`
+  - Respuesta: `ApiResponse<bool>`
+
+- GET `/api/estudiantes/tipo-info/{idTipoEstudiante}`
+  - Route params: `idTipoEstudiante: int`
+  - Respuesta: `ApiResponse<object>`
+    - Data:
+      - `idTipo: int`
+      - `descripcion: string`
+      - `puedeRecibirBecas: bool`
+      - `prioridadInscripcion: int`
+      - `descuentoMatricula: { montoBase: decimal, montoConDescuento: decimal, porcentajeDescuento: decimal }`
+
+### Modelos (Estudiantes)
+
+- EstudianteDto
+  - `idEstudiante: int`
+  - `matricula: string` (máx. 20)
+  - `nombreCompleto: string` (máx. 255)
+  - `semestre: sbyte`
+  - `promedio: decimal`
+  - `idCarrera: int`
+  - `idTipoEstudiante: int`
+  - `nombreCarrera?: string`
+  - `tipoEstudiante?: string`
+
+- EstudianteCreateDto
+  - `matricula: string` (máx. 20, requerido)
+  - `nombreCompleto: string` (máx. 255, requerido)
+  - `semestre: sbyte`
+  - `promedio: decimal`
+  - `idCarrera: int` (requerido)
+  - `idTipoEstudiante: int` (requerido)
+
+- EstudianteUpdateDto
+  - `matricula: string` (máx. 20, requerido)
+  - `nombreCompleto: string` (máx. 255, requerido)
+  - `semestre: sbyte`
+  - `promedio: decimal`
+  - `idCarrera: int` (requerido)
+  - `idTipoEstudiante: int` (requerido)
+
+- EstudianteFiltroDto (Query)
+  - `idCarrera?: int`
+  - `semestre?: sbyte`
+  - `idTipoEstudiante?: int`
+  - `nombreCompleto?: string`
+  - `matricula?: string`
+  - `promedioMinimo?: decimal`
+  - `promedioMaximo?: decimal`
+  - `page: int`
+  - `pageSize: int`
+
+### Ejemplos
+
+- Listado paginado:
+GET /api/estudiantes/get-all?page=1&pageSize=10&nombreCompleto=ana
+
+- Crear:
+POST /api/estudiantes
+Content-Type: application/json
+{
+  "matricula": "A00999",
+  "nombreCompleto": "Juan López",
+  "semestre": 1,
+  "promedio": 9.1,
+  "idCarrera": 2,
+  "idTipoEstudiante": 1
+}
+
+- Validar matrícula:
+GET /api/estudiantes/validar-matricula/A00999?idEstudianteExcluir=5
+
+---
+
+## Carreras API
+
+Base URL: `/api/carreras`
+
+### Endpoints
+
+- GET `/api/carreras/get-all`
+  - Respuesta: `ApiResponse<List<CarreraDto>>`
+
+- GET `/api/carreras/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<CarreraDto>`
+
+- POST `/api/carreras`
+  - Body: `CarreraCreateDto`
+  - Respuesta: `ApiResponse<CarreraDto>` (201 Created)
+
+- PUT `/api/carreras/{id}`
+  - Route params: `id: int`
+  - Body: `CarreraCreateDto`
+  - Respuesta: `ApiResponse<CarreraDto>`
+
+- DELETE `/api/carreras/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<bool>`
+
+- GET `/api/carreras/validar-nombre/{nombreCarrera}?idCarreraExcluir={id?}`
+  - Route params: `nombreCarrera: string`
+  - Query params: `idCarreraExcluir: int?`
+  - Respuesta: `ApiResponse<bool>`
+
+### Modelos (Carreras)
+
+- CarreraDto
+  - `idCarrera: int`
+  - `nombreCarrera: string` (máx. 100, requerido)
+  - `totalEstudiantes: int`
+
+- CarreraCreateDto
+  - `nombreCarrera: string` (máx. 100, requerido)
+
+---
+
+## Tipos de Estudiante API
+
+Base URL: `/api/tipos-estudiante`
+
+### Endpoints
+
+- GET `/api/tipos-estudiante/get-all`
+  - Respuesta: `ApiResponse<List<TipoEstudianteDto>>`
+
+- GET `/api/tipos-estudiante/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<TipoEstudianteDto>`
+
+- POST `/api/tipos-estudiante`
+  - Body: `TipoEstudianteCreateDto`
+  - Respuesta: `ApiResponse<TipoEstudianteDto>` (201 Created)
+
+- PUT `/api/tipos-estudiante/{id}`
+  - Route params: `id: int`
+  - Body: `TipoEstudianteCreateDto`
+  - Respuesta: `ApiResponse<TipoEstudianteDto>`
+
+- DELETE `/api/tipos-estudiante/{id}`
+  - Route params: `id: int`
+  - Respuesta: `ApiResponse<bool>`
+
+- GET `/api/tipos-estudiante/validar-nombre/{nombreTipo}?idTipoExcluir={id?}`
+  - Route params: `nombreTipo: string`
+  - Query params: `idTipoExcluir: int?`
+  - Respuesta: `ApiResponse<bool>`
+
+### Modelos (Tipos de Estudiante)
+
+- TipoEstudianteDto
+  - `idTipoEstudiante: int`
+  - `nombreTipo: string` (máx. 50, requerido)
+  - `totalEstudiantes: int`
+
+- TipoEstudianteCreateDto
+  - `nombreTipo: string` (máx. 50, requerido)
+
+---
+
+## Modelos comunes
+
+- ApiResponse<T>
+  - `success: bool`
+  - `message: string`
+  - `data: T | null`
+  - `errors: string[]`
+
+- PaginatedResponse<T>
+  - `data: T[]`
+  - `totalRecords: int`
+  - `page: int`
+  - `pageSize: int`
+  - `totalPages: int`
+  - `hasNextPage: bool`
+  - `hasPreviousPage: bool`

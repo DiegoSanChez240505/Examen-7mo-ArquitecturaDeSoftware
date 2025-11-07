@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnivSys - Registro de Estudiantes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="main-wrapper"> 
+        <header>
+            <h1>📚 UnivSys - Gestión de Estudiantes</h1>
+        </header>
+
+        <div class="container-registro">
+            
+            <div class="panel-izquierdo">
+                <h2 class="saludo-titulo">¡Hola!</h2>
+                <p class="saludo-texto">
+                    Utilice este formulario para <br> **registrar nuevos estudiantes** <br> en el sistema UnivSys.
+                </p>
+                <button class="btn-secundario" onclick="document.getElementById('consulta').scrollIntoView();">
+                    Ver Lista Existente
+                </button>
+            </div>
+
+            <div class="panel-derecho">
+                <h2 class="form-titulo">Registrar Estudiante</h2>
+                
+                <div class="social-icons">
+                    <i class="fab fa-twitch"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-tiktok"></i>
+                </div>
+                
+                <p class="form-subtexto">Complete los datos del estudiante:</p>
+
+                <section id="registro">
+                    <form id="student-form">
+                        <div class="input-group">
+                            <i class="fas fa-id-card"></i>
+                            <input type="text" id="matricula" placeholder="Matrícula (opcional - se genera automáticamente)" maxlength="20">
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="nombre" placeholder="Nombre Completo" maxlength="255" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-graduation-cap"></i>
+                            <select id="carrera" required>
+                                <option value="">Seleccione una carrera...</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="number" id="semestre" min="1" max="12" placeholder="Semestre" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-percent"></i>
+                            <input type="number" id="promedio" step="0.01" min="0" max="10" placeholder="Promedio" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-user-tag"></i>
+                            <select id="tipoEstudiante" required>
+                                <option value="">Seleccione tipo de estudiante...</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-principal">REGISTRAR</button>
+                    </form>
+                    <p id="mensaje-servidor" class="mensaje"></p>
+                </section>
+            </div>
+        </div>
+
+        <main>
+            <hr>
+            <section id="consulta">
+                <h2>Estudiantes Registrados (CRUD)</h2>
+                <div id="filtros">
+                    <div class="filtros-row">
+                        <label for="filtro-nombre">Nombre:</label>
+                        <input type="text" id="filtro-nombre" placeholder="Buscar por nombre...">
+                        
+                        <label for="filtro-matricula">Matrícula:</label>
+                        <input type="text" id="filtro-matricula" placeholder="Buscar por matrícula...">
+                        
+                        <label for="filtro-carrera-select">Carrera:</label>
+                        <select id="filtro-carrera-select">
+                            <option value="">Todas las carreras</option>
+                        </select>
+                        
+                        <label for="filtro-semestre">Semestre:</label>
+                        <select id="filtro-semestre">
+                            <option value="">Todos</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                        
+                        <label for="filtro-tipo">Tipo:</label>
+                        <select id="filtro-tipo">
+                            <option value="">Todos los tipos</option>
+                        </select>
+                        
+                        <button onclick="filtrarEstudiantes()">Filtrar</button>
+                        <button onclick="limpiarFiltros()">Limpiar</button>
+                    </div>
+                </div>
+                
+                <table id="estudiantes-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Matrícula</th>
+                            <th>Nombre Completo</th>
+                            <th>Carrera</th>
+                            <th>Semestre</th>
+                            <th>Promedio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+                <button onclick="cargarEstudiantes()">Recargar Lista</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
